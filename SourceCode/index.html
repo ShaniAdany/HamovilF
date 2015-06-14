@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="he">
+    <head>
+        <meta charset="utf-8">
+        <title>לובינסקי טרייד - פוספלד המוביל</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="include/font-awesome-4.3.0/css/font-awesome.min.css" type="text/css"/>
+        <link href="include/reset.css" rel="stylesheet"/>
+        <link href="include/style_rtl.css" rel="stylesheet"/>
+        <link href="jquery-ui-1.10.4.custom/css/smoothness/jquery-ui-1.10.4.custom.css" rel="stylesheet"/>
+        <script src="jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"></script>
+        <script src="jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+        <script src="jquery-ui-1.10.4.custom/development-bundle/ui/i18n/jquery.ui.datepicker-he.js"></script>
+        <script type="text/javascript" src="javascript/custom.js"></script>
+        <script type="text/javascript" src="javascript/easing.js"></script>
+        <script>
+            function readCookie(name){
+                var nameEQ=name+"=";
+                var ca=document.cookie.split(';');
+                for(var i=0;i<ca.length;i++)
+                {
+                    var c = ca[i];
+                    
+                    while(c.charAt(0)==' ')
+                        c=c.substring(1,c.length);
+                    
+                    if (c.indexOf(nameEQ) == 0)
+                        return c.substring(nameEQ.length,c.length);
+                }
+                
+                return null;
+            }
+            
+            var cookieRegistry=[];
+            
+            function listenCookieChange(cookieName, callback){
+                setInterval(function(){
+                    if(cookieRegistry[cookieName])
+                    {
+                        if(readCookie(cookieName)!=cookieRegistry[cookieName])
+                        {
+                            cookieRegistry[cookieName] = readCookie(cookieName);
+                            return callback();
+                        }
+                    }else{
+                        cookieRegistry[cookieName] = readCookie(cookieName);
+                    }
+                }, 100);
+            }
+            
+            function isEmpty(obj) {
+                if(obj == null)
+                    return true;
+                if(obj.length > 0)
+                    return false;
+                if(obj.length === 0)
+                    return true;
+                
+                for(var key in obj){
+                    if(hasOwnProperty.call(obj, key))
+                        return false;
+                }
+                return true;
+            }
+        </script>
+        <script src="/javascript/jsVariables-he.js"></script>
+    </head>
+<body>
+      <div class="logoRel w1161">
+	    <div class="abs logo">
+            <a href="http://lubinski-899.mirror.zite.co.il/">
+                <img src="http://lubinski-899.mirror.zite.co.il/data/images/899_ba2dd4b15c62166cd49f4d7e5276910d.jpg"/>
+            </a>
+          </div>
+      </div>
+      <div class="topStrip w1161">
+	    <div class="iconsBox">
+		  <div>
+              <a href="http://lubinski-899.mirror.zite.co.il/?contact">
+                  <img width="21" height="14" src="http://www.mirror.zite.co.il/uploaded/images/899_f071193fbea09b8502a5b4baacc91e59.png" alt="contactus" />
+              </a>
+            </div>
+		  <div>
+              <a href="http://www,facebook.com">
+                  <img width="21" height="21" src="http://www.mirror.zite.co.il/uploaded/images/899_1892cb8713d6d5906c9ae16ddee56412.png" alt="facebook" />
+              </a>
+            </div>
+		  <div>
+              <a href="http://www.youtube.com">
+                  <img width="22" height="21" src="http://www.mirror.zite.co.il/uploaded/images/899_40bb3f54f1f9f05c638ff9ef989f108b.png" alt="youtube" />
+              </a>
+            </div>
+	    </div>
+	    <div class="clr"></div>
+      </div>
+      <div class="topDarkBox">
+	    <div class="innerDarkBox w1161">
+		  <div class="stampBox"><a href="http://lubinski-899.mirror.zite.co.il"><img width="107" height="107" alt="stamp" src="http://www.mirror.zite.co.il/uploaded/images/899_7e6027dc5e1b9c0c77af861cc2b7d72c.png" /></a></div>
+		  <div class="infoBox">
+			<div class="innerInfoBox"><h2><a href="http://lubinski-899.mirror.zite.co.il/">המוביל פוספלד בע&quot;מ</a></h2>
+<p>המוביל 9 כפר סבא<br />
+שעות פתיחה: א-ה: 07:30 - 16:30&nbsp; |&nbsp; ו: 07:30 - 12:00</p>
+<p>אולם תצוגה: א-ה: 9:00-17:30 | ו: 9:00-12:30.</p></div>
+			<div class="clr"></div>
+			<div class="infoLinks">
+			      
+			      				    <a class="infol" href="tel:073-263-6363"><i class="fa fa-phone"></i><div>073-263-6363</div></a>
+				    				    <a class="infol" href="https://goo.gl/maps/LDI54"><i class="fa fa-map-marker"></i><div>מפת הגעה</div></a>
+				    			      
+			      <div class="clr"></div>
+			</div>
+			
+		  </div>
+		  <div class="clr"></div>
+		  <div class="mobileExpandingMenu">
+				
+	<script type="text/javascript" src="http://www.mirror.zite.co.il/js/ExpandingMenu/expanding_menu.js"></script>
+	<script type="text/javascript">
+		
+		function __setHighlight( objRef, set )
+		{
+			if ( objRef.tagName == "DIV" )
+			{
+				return;
+			}
+			
+			if ( objRef.className && objRef.className.length > 0 )
+			{
+				if ( set )
+				{
+					objRef.className += "_over";
+				}
+				else
+				{
+					objRef.className = objRef.className.replace( "_over", "" );
+				}
+			}
+			
+			for ( var node in objRef.childNodes )
+			{
+				__setHighlight( objRef.childNodes[ node ], set );
+			}
+		}
+		
+	</script>
+
+	<tr height="20"><td><img src="images/pix.gif" width="1" height="1" border="0" alt=""/></td></tr>			
+			<tr>
+				<td style="cursor:pointer; " onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" onclick="javascript:document.location.href='http://lubinski-899.mirror.zite.co.il/?categoryId=23317';" dir="rtl">
+						
+						
+						
+						<tr>
+							<td align="" valign="middle" class="side_menu_cell_1"><a href="http://lubinski-899.mirror.zite.co.il/?categoryId=23317" class="side_menu_link_1">אודותינו</a></td>
+						</tr>
+					</table>
+					<div id="cat23317" style="display:none">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						
+												
+						</table>
+					</div>
+				</td>
+			</tr>
+			
+					
+			<tr>
+				<td style="cursor:pointer; " onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" onclick="javascript:document.location.href='http://lubinski-899.mirror.zite.co.il/?categoryId=23315';" dir="rtl">
+						
+					
+								<tr>
+									<td height="1" style="line-height:0px;"><img src="images/pix.gif" width="1" height="1" border="0" alt=""/></td>
+								</tr>
+								
+						
+						<tr>
+							<td align="" valign="middle" class="side_menu_cell_1"><a href="http://lubinski-899.mirror.zite.co.il/?categoryId=23315" class="side_menu_link_1">שירותים נוספים</a></td>
+						</tr>
+					</table>
+					<div id="cat23315" style="display:none">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						
+												
+						</table>
+					</div>
+				</td>
+			</tr>
+			
+					
+			<tr>
+				<td style="cursor:pointer; " onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" onclick="javascript:document.location.href='http://lubinski-899.mirror.zite.co.il/?categoryId=27457';" dir="rtl">
+						
+					
+								<tr>
+									<td height="1" style="line-height:0px;"><img src="images/pix.gif" width="1" height="1" border="0" alt=""/></td>
+								</tr>
+								
+						
+						<tr>
+							<td align="" valign="middle" class="side_menu_cell_1"><a href="http://lubinski-899.mirror.zite.co.il/?categoryId=27457" class="side_menu_link_1">מחלקות</a></td>
+						</tr>
+					</table>
+					<div id="cat27457" style="display:none">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						
+												
+						</table>
+					</div>
+				</td>
+			</tr>
+			
+					
+			<tr>
+				<td style="cursor:pointer; " onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" onclick="javascript:document.location.href='http://lubinski-899.mirror.zite.co.il/?categoryId=29003';" dir="rtl">
+						
+					
+								<tr>
+									<td height="1" style="line-height:0px;"><img src="images/pix.gif" width="1" height="1" border="0" alt=""/></td>
+								</tr>
+								
+						
+						<tr>
+							<td align="" valign="middle" class="side_menu_cell_1"><a href="http://lubinski-899.mirror.zite.co.il/?categoryId=29003" class="side_menu_link_1">אולם תצוגה</a></td>
+						</tr>
+					</table>
+					<div id="cat29003" style="display:none">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						
+									
+			<tr>
+				<td style="cursor:pointer; background: url( ../images/sidemenu_sep.jpg ) top    no-repeat" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" onclick="javascript:document.location.href='http://lubinski-899.mirror.zite.co.il/?categoryId=32622';" dir="rtl">
+						
+					
+								<tr>
+									<td height="1" style="line-height:0px;"><img src="images/pix.gif" width="1" height="1" border="0" alt=""/></td>
+								</tr>
+								
+						
+						<tr>
+							<td align="" valign="middle" class="side_menu_cell_2"><a href="http://lubinski-899.mirror.zite.co.il/?categoryId=32622" class="side_menu_link_2">אולם תצוגה רכב חדש</a></td>
+						</tr>
+					</table>
+					<div id="cat32622" style="display:none">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						
+												
+						</table>
+					</div>
+				</td>
+			</tr>
+			
+					
+			<tr>
+				<td style="cursor:pointer; background: url( ../images/sidemenu_sep.jpg ) top    no-repeat" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" onclick="javascript:document.location.href='http://lubinski-899.mirror.zite.co.il/?categoryId=32623';" dir="rtl">
+						
+					
+								<tr>
+									<td height="1" style="line-height:0px;"><img src="images/pix.gif" width="1" height="1" border="0" alt=""/></td>
+								</tr>
+								
+						
+						<tr>
+							<td align="" valign="middle" class="side_menu_cell_2"><a href="http://lubinski-899.mirror.zite.co.il/?categoryId=32623" class="side_menu_link_2">מכירת רכב חדש</a></td>
+						</tr>
+					</table>
+					<div id="cat32623" style="display:none">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						
+												
+						</table>
+					</div>
+				</td>
+			</tr>
+			
+					
+			<tr>
+				<td style="cursor:pointer; background: url( ../images/sidemenu_sep.jpg ) top    no-repeat" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" onclick="javascript:document.location.href='http://lubinski-899.mirror.zite.co.il/?categoryId=32624';" dir="rtl">
+						
+					
+								<tr>
+									<td height="1" style="line-height:0px;"><img src="images/pix.gif" width="1" height="1" border="0" alt=""/></td>
+								</tr>
+								
+						
+						<tr>
+							<td align="" valign="middle" class="side_menu_cell_2"><a href="http://lubinski-899.mirror.zite.co.il/?categoryId=32624" class="side_menu_link_2">טרייד אין</a></td>
+						</tr>
+					</table>
+					<div id="cat32624" style="display:none">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						
+												
+						</table>
+					</div>
+				</td>
+			</tr>
+			
+					
+			<tr>
+				<td style="cursor:pointer; background: url( ../images/sidemenu_sep.jpg ) top    no-repeat" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" onclick="javascript:document.location.href='http://lubinski-899.mirror.zite.co.il/?categoryId=32625';" dir="rtl">
+						
+					
+								<tr>
+									<td height="1" style="line-height:0px;"><img src="images/pix.gif" width="1" height="1" border="0" alt=""/></td>
+								</tr>
+								
+						
+						<tr>
+							<td align="" valign="middle" class="side_menu_cell_2"><a href="http://lubinski-899.mirror.zite.co.il/?categoryId=32625" class="side_menu_link_2">מימון</a></td>
+						</tr>
+					</table>
+					<div id="cat32625" style="display:none">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						
+												
+						</table>
+					</div>
+				</td>
+			</tr>
+			
+								
+						</table>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="cursor:pointer; " onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" onclick="javascript:document.location.href='http://lubinski-899.mirror.zite.co.il/?categoryId=27859';" dir="rtl">
+								<tr>
+									<td height="1" style="line-height:0px;"><img src="images/pix.gif" width="1" height="1" border="0" alt=""/></td>
+								</tr>
+								
+						
+						<tr>
+							<td align="" valign="middle" class="side_menu_cell_1"><a href="http://lubinski-899.mirror.zite.co.il/?categoryId=27859" class="side_menu_link_1">צור קשר</a></td>
+						</tr>
+					</table>
+					<div id="cat27859" style="display:none">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						
+												
+						</table>
+					</div>
+				</td>
+			</tr>
+			
+					
+			<tr>
+				<td style="cursor:pointer; " onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );">
+					<table cellpadding="0" cellspacing="0" border="0" width="100%" onclick="javascript:document.location.href='http://lubinski-899.mirror.zite.co.il/?categoryId=23428';" dir="rtl">
+						
+					
+								<tr>
+									<td height="1" style="line-height:0px;"><img src="images/pix.gif" width="1" height="1" border="0" alt=""/></td>
+								</tr>
+								
+						
+						<tr>
+							<td align="" valign="middle" class="side_menu_cell_1"><a href="http://lubinski-899.mirror.zite.co.il/?categoryId=23428" class="side_menu_link_1">מבצעים</a></td>
+						</tr>
+					</table>
+					<div id="cat23428" style="display:none">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						
+												
+						</table>
+					</div>
+				</td>
+			</tr>
+			
+		<tr height="20"><td><img src="images/pix.gif" width="1" height="1" border="0" alt=""/></td></tr>		  </div>
+	    </div>
+	    <div class="clr"></div>
+	    <div class="rel w1161">
+	    		  <div class="ddmBox">
+			
+						
+			<script language="JavaScript">
+				
+				function __setHighlight( objRef, set )
+				{
+					if ( objRef.tagName == "DIV" )
+					{
+						return;
+					}
+					
+					if ( objRef.className && objRef.className.length > 0 )
+					{
+						if ( set )
+						{
+							objRef.className += "_over";
+						}
+						else
+						{
+							objRef.className = objRef.className.replace( "_over", "" );
+						}
+					}
+					
+					for ( var node in objRef.childNodes )
+					{
+						__setHighlight( objRef.childNodes[ node ], set );
+					}
+				}
+				
+				function __showMenu( objRef, name, show )
+				{
+					__setHighlight( objRef, show );
+					var menu = document.getElementById( name );
+					
+					if( show )
+					{
+						$( '#' + name ).css({ 'top':'0px' });
+					}
+					else
+					{
+						$( '#' + name ).css({ 'top':'-5000px' });
+					}
+				}
+				
+			</script>
+			
+				
+		<ul class="us_ddm_main_table">
+			
+						
+			<li class="us_ddm_menu_item_2_selected" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );">
+				<span class="us_ddm_link_cell_2_selected">
+					<a href="http://lubinski-899.mirror.zite.co.il/?categoryId=23286" class="us_ddm_link_2_selected">דף הבית</a>
+				</span>
+			</li>
+			
+						
+			<li class="us_ddm_menu_item_2" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );" onclick="javascript:void( 0 );">
+				<span class="fwh us_ddm_link_cell_2">
+					<a href="?categoryId=23317" class="us_ddm_link_2">אודותינו</a>
+				</span>
+			</li>
+			
+						
+			<li class="us_ddm_menu_item_parent_2" onmouseout="__showMenu( this, '__menu23315', false );" onmouseover="__showMenu( this, '__menu23315', true );">
+				<ul class="us_ddm_link_cell_parent_2">
+					<li>
+						<a href="?categoryId=23315" class="us_ddm_link_parent_2">שירותים נוספים</a>
+						<div style="position:relative; width:100%; z-index:10; height:0;">
+							<div class="us_ddm_menu_div_parent_2" id="__menu23315">		
+		<ul class="us_ddm_main_table">
+			
+						
+			
+		</ul>
+		
+	</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+			
+						
+			<li class="us_ddm_menu_item_2" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );" onclick="javascript:void( 0 );">
+				<span class="fwh us_ddm_link_cell_2">
+					<a href="?categoryId=27457" class="us_ddm_link_2">מחלקות</a>
+				</span>
+			</li>
+			
+						
+			<li class="us_ddm_menu_item_parent_2" onmouseout="__showMenu( this, '__menu29003', false );" onmouseover="__showMenu( this, '__menu29003', true );">
+				<ul class="us_ddm_link_cell_parent_2">
+					<li>
+						<a href="?categoryId=29003" class="us_ddm_link_parent_2">אולם תצוגה</a>
+						<div style="position:relative; width:100%; z-index:10; height:0;">
+							<div class="us_ddm_menu_div_parent_2" id="__menu29003">		
+		<ul class="us_ddm_main_table">
+			
+						
+			<li class="us_ddm_menu_item_3" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );" onclick="javascript:void( 0 );">
+				<span class="fwh us_ddm_link_cell_3">
+					<a href="?categoryId=32622" class="us_ddm_link_3">אולם תצוגה רכב חדש</a>
+				</span>
+			</li>
+			
+						
+			<li class="us_ddm_menu_item_3" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );" onclick="javascript:void( 0 );">
+				<span class="fwh us_ddm_link_cell_3">
+					<a href="?categoryId=32623" class="us_ddm_link_3">מכירת רכב חדש</a>
+				</span>
+			</li>
+			
+						
+			<li class="us_ddm_menu_item_3" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );" onclick="javascript:void( 0 );">
+				<span class="fwh us_ddm_link_cell_3">
+					<a href="?categoryId=32624" class="us_ddm_link_3">טרייד אין</a>
+				</span>
+			</li>
+			
+						
+			<li class="us_ddm_menu_item_3" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );" onclick="javascript:void( 0 );">
+				<span class="fwh us_ddm_link_cell_3">
+					<a href="?categoryId=32625" class="us_ddm_link_3">מימון</a>
+				</span>
+			</li>
+			
+						
+			
+		</ul>
+		
+	</div>
+						</div>
+					</li>
+				</ul>
+			</li>
+			
+						
+			<li class="us_ddm_menu_item_2" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );" onclick="javascript:void( 0 );">
+				<span class="fwh us_ddm_link_cell_2">
+					<a href="?categoryId=27859" class="us_ddm_link_2">צור קשר</a>
+				</span>
+			</li>
+			
+						
+			<li class="us_ddm_menu_item_2" onmouseout="__setHighlight( this, false );" onmouseover="__setHighlight( this, true );" onclick="javascript:void( 0 );">
+				<span class="fwh us_ddm_link_cell_2">
+					<a href="?categoryId=23428" class="us_ddm_link_2">מבצעים</a>
+				</span>
+			</li>
+			
+						
+			
+		</ul>
+		
+				
+		  </div>
+	    		  
+	    </div>
+      </div>
+      
+      
+      <div class="hpImagesBlock">
+            <div class="categoriesBox">
+                                          
+                        <div class="hpSideCat" onclick="switchCat( 'http://lubinski-899.mirror.zite.co.il/data/images/899_abb4db698461585ff11bf1cfee398cc0.jpg',38365 );">
+                              <div class="iconBox" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_bbf3b2cecc0fe2bda313b4db4af74b95.jpg )"></div>
+                              <div class="descBox"><div class="descWrapper">אחריות על חלפים משומשים</div></div>
+                        </div>
+                                          
+                        <div class="hpSideCat" onclick="switchCat( 'http://lubinski-899.mirror.zite.co.il/data/images/899_9a38822c96a71035275055f282ad0668.jpg',38367 );">
+                              <div class="iconBox" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_a0b1e7dc8f7512c7235e15693ed2747c.jpg )"></div>
+                              <div class="descBox"><div class="descWrapper">חדר המתנה ממוזג ומאובזר</div></div>
+                        </div>
+                                          
+                        <div class="hpSideCat" onclick="switchCat( 'http://lubinski-899.mirror.zite.co.il/data/images/899_ecab64c74e008a693429f16da376cf36.jpg',50826 );">
+                              <div class="iconBox" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_b395014a0fc4fd4b5b920897b0109bab.jpg )"></div>
+                              <div class="descBox"><div class="descWrapper">חדר המתנה ממוזג ומאובזר</div></div>
+                        </div>
+                                          
+                        <div class="hpSideCat" onclick="switchCat( 'http://lubinski-899.mirror.zite.co.il/data/images/899_f323b13f20ee091dc9dd1f21ebb8a630.jpg',38364 );">
+                              <div class="iconBox" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_b395014a0fc4fd4b5b920897b0109bab.jpg )"></div>
+                              <div class="descBox"><div class="descWrapper">כיוון על פי היצרן</div></div>
+                        </div>
+                                          
+                        <div class="hpSideCat" onclick="switchCat( 'http://lubinski-899.mirror.zite.co.il/data/images/899_efc1c926272807b4aa35e04a0e990492.jpg',38366 );">
+                              <div class="iconBox" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_d9637a4b18dcfcfa03c32ae4209c25d9.jpg )"></div>
+                              <div class="descBox"><div class="descWrapper">מחשבי בדיקה לרכב</div></div>
+                        </div>
+                                          
+                        <div class="hpSideCat" onclick="switchCat( 'http://lubinski-899.mirror.zite.co.il/data/images/899_f323b13f20ee091dc9dd1f21ebb8a630.jpg',38363 );">
+                              <div class="iconBox" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_df8e5ad06766bc576f82c204940d47bb.jpg )"></div>
+                              <div class="descBox"><div class="descWrapper">שימוש בחלפים מקוריים</div></div>
+                        </div>
+                              </div>
+            <div class="imagesBox">
+                                                <div class="pictureFrame" id="p_38365" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_abb4db698461585ff11bf1cfee398cc0.jpg )"></div>
+                              <div class="description" id="d_38365">
+                                    <div class="descriptionInner"><h1>חוויית שירות שלא הכרת,</h1>
+<h1>לך ולרכב שלך</h1>
+<p><br />
+כל הטיפולים והתיקונים תחת קורת גג אחד רק במרכזי שירות מורשי יבואן</p></div>
+                              </div>
+                              <a class="button"  id="b_38365">לפרטים נוספים</a>
+                                                      <div class="pictureFrame" id="p_38367" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_9a38822c96a71035275055f282ad0668.jpg )"></div>
+                              <div class="description" id="d_38367">
+                                    <div class="descriptionInner"><h1>עכשיו אתם חלק מהמשפחה!</h1>
+<h1>אנחנו כאן לשירותכם</h1>
+<p><br />
+על מנת לעזור לכם להינות מהרכב החדש בצורה מקסימלית </p></div>
+                              </div>
+                              <a class="button"  id="b_38367">לפרטים נוספים</a>
+                                                      <div class="pictureFrame" id="p_50826" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_ecab64c74e008a693429f16da376cf36.jpg )"></div>
+                              <div class="description" id="d_50826">
+                                    <div class="descriptionInner"><p>עכשיו אתם חלק מהמשפחה!<br />
+אנחנו כאן לשירותכם<br />
+<br />
+<br />
+על מנת לעזור לכם להינות מהרכב החדש בצורה מקסימלית </p></div>
+                              </div>
+                              <a class="button"  id="b_50826">לפרטים נוספים</a>
+                                                      <div class="pictureFrame" id="p_38364" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_f323b13f20ee091dc9dd1f21ebb8a630.jpg )"></div>
+                              <div class="description" id="d_38364">
+                                    <div class="descriptionInner"><h1>אל תתפשר על איכות הטיפול</h1>
+<h1>הכנס את רכבך לשירות מכונאות רכב כללית</h1>
+<p><br />
+במוסך מורשה של קבוצת לובינסקי</p>
+<p>&nbsp;</p></div>
+                              </div>
+                              <a class="button" href="http://www.google.com"  target="_blank"  id="b_38364">לפרטים נוספים</a>
+                                                      <div class="pictureFrame" id="p_38366" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_efc1c926272807b4aa35e04a0e990492.jpg )"></div>
+                              <div class="description" id="d_38366">
+                                    <div class="descriptionInner"><h1>העבר את רכבך דיאגנוסטיקה ממוחשבת</h1>
+<h1>למיעת ופתרון תקלות עוד היום</h1>
+<p><br />
+כל הטיפולים והתיקונים תחת קורת גג אחד רק במרכזי שירות מורשי יבואן</p></div>
+                              </div>
+                              <a class="button"  id="b_38366">לפרטים נוספים</a>
+                                                      <div class="pictureFrame" id="p_38363" style="background-image:url( http://lubinski-899.mirror.zite.co.il/data/images/899_f323b13f20ee091dc9dd1f21ebb8a630.jpg )"></div>
+                              <div class="description" id="d_38363">
+                                    <div class="descriptionInner"><h1>מוכר את רכבך?</h1>
+<h1>תהליך ההכנה שלנו יעזור לך לקבל עליו יותר!</h1>
+<p>במוסך מורשה של קבוצת לובינסקי</p></div>
+                              </div>
+                              <a class="button"  id="b_38363">לפרטים נוספים</a>
+                                    </div>
+            <div class="clr"></div>
+      </div>
+      
+
+<div class="contactFormBox">
+      <div class="w1161 rel">
+	<div class="servicesTriggerButton" onclick="$( '.serviceFormWrapper' ).toggle();">
+		<div class="icon"><img src="images/services_icon.jpg" alt="" title=""/></div>
+		<div class="title">הזמנת שירות</div>
+	</div>
+</div>
+<div class="w1161 serviceFormWrapper">
+	<div class="buffer">
+		
+			
+		<form method="post" action="">
+			<div class="fieldsGroup">
+				<div class="holder">
+					<label>שם + שם משפחה<span class="mandatory">*</span></label>
+					<input tabindex="1" type="text" name="c_name" value="" />
+				</div>
+				<div class="holder">
+					<label>מספר טלפון<span class="mandatory">*</span></label>
+					<input class="c_phone" tabindex="4" type="text" name="c_phone" value="" />
+					<select tabindex="3" class="c_phone" name="c_area">
+						<option>בחר\י</option>
+						<option  value="02">02</option>
+						<option  value="03">03</option>
+						<option  value="04">04</option>
+						<option  value="08">08</option>
+						<option  value="09">09</option>
+						<option  value="050">050</option>
+						<option  value="052">052</option>
+						<option  value="054">054</option>
+						<option  value="055">055</option>
+						<option  value="057">057</option>
+						<option  value="058">058</option>
+						<option  value="072">072</option>
+						<option  value="077">077</option>
+					</select>
+				</div>
+				<div class="holder">
+					<label>דוא"ל</label>
+					<input tabindex="4" type="email" name="c_email" value=""/>
+				</div>
+			</div>
+			<div class="fieldsGroup">
+				<div class="holder">
+					<label>סוג טיפול</label>
+					<select tabindex="2" class="services" name="c_service">
+						<option>בחר\י</option>
+													<option  value="סוג 1">סוג 1</option>
+													<option  value="סוג 2">סוג 2</option>
+													<option  value="סוג 3">סוג 3</option>
+											</select>
+				</div>
+				<div class="holder">
+					<label>תאריך מבוקש</label>
+					<input id="datepicker" class="datebg" tabindex="4" type="text" name="c_date" value=""/>
+					<script>
+						
+						
+						$.datepicker.setDefaults( $.datepicker.regional[ "he" ] ); // we have a translations arr for customization in custom.js
+						$( "#datepicker" ).datepicker({
+							inline: true
+						});
+						
+						
+					</script>
+				</div>
+				<div class="holder">
+					<label>מספר רישוי</label>
+					<input tabindex="4" type="text" name="c_carid" value="" />
+				</div>
+			</div>
+			<div class="fieldsGroup">
+				<div class="holder">
+					<label>תוכן הודעה</label>
+					<textarea name="c_content"></textarea>
+					<input type="submit" value="שלח" />
+					<div class="c_errors"></div>
+					<div class="clr"></div>
+				</div>
+			</div>
+			<div class="clr"></div>
+		</form>
+		
+			
+		<div class="clr"></div>
+	</div>
+	<div class="clr"></div>
+</div></div>
+<div class="hpMainContent">
+      <div class="w1161 pt49">
+            <div class="contentFrame">
+                  <div class="w44-7 f_right mrl2">
+                        <h2>
+                              מחלקות מרכז השירות                        </h2>
+                        <div class="clr h23"></div>
+                                                      <a class="department  " href="http://lubinski-899.mirror.zite.co.il/?categoryId=23398" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_697a2755558df3a46ec6c8e2cd3254dd.png)"></div>
+                                    <div class="titleHolder"><div class="tablecell">תהליך הטיפול ברכב במרכז השרות</div></div>
+                              </a>
+                                                            <a class="department pr2-75 " href="http://lubinski-899.mirror.zite.co.il/?categoryId=23399" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_65703090522303b0106ec6c7d9483efc.png)"></div>
+                                    <div class="titleHolder"><div class="tablecell">הכנת רכב למכירה</div></div>
+                              </a>
+                                                            <a class="department pr2-75 " href="http://lubinski-899.mirror.zite.co.il/?categoryId=23400" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_2de8f414bbd98c4868d0b96c604ae0e2.png)"></div>
+                                    <div class="titleHolder"><div class="tablecell">סוכנות יבואן למכירת רכב חדש</div></div>
+                              </a>
+                                                            <a class="department  " href="http://lubinski-899.mirror.zite.co.il/?categoryId=23401" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_8006f517496c381e8ebb9d7d09680ee0.png)"></div>
+                                    <div class="titleHolder"><div class="tablecell">חשמל ומיזוג אוויר</div></div>
+                              </a>
+                                                            <a class="department pr2-75 " href="http://lubinski-899.mirror.zite.co.il/?categoryId=23402" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_a02600a74733ddfec3523bb94c6855ff.png)"></div>
+                                    <div class="titleHolder"><div class="tablecell">מכונאות רכב </div></div>
+                              </a>
+                                                            <a class="department pr2-75 " href="http://lubinski-899.mirror.zite.co.il/?categoryId=23403" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_697ae0d159038ff3c508910827b03311.png)"></div>
+                                    <div class="titleHolder"><div class="tablecell">פחחות וצבע רכב </div></div>
+                              </a>
+                                                            <a class="department  " href="http://lubinski-899.mirror.zite.co.il/?categoryId=23404" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_36cdb19d6a9f821c3f70265fde845cce.png)"></div>
+                                    <div class="titleHolder"><div class="tablecell">ביצוע מבחני  רישוי </div></div>
+                              </a>
+                                                            <a class="department pr2-75 " href="http://lubinski-899.mirror.zite.co.il/?categoryId=23405" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_d84e42ccff6e2653082962e7f1ff6f39.png)"></div>
+                                    <div class="titleHolder"><div class="tablecell">שירותי דיאגנוסטיקה </div></div>
+                              </a>
+                                                            <a class="department pr2-75 " href="http://lubinski-899.mirror.zite.co.il/?categoryId=23406" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_f588b94c0ec2339f4c82852fd26f4b7b.png)"></div>
+                                    <div class="titleHolder"><div class="tablecell">אבזור משלים</div></div>
+                              </a>
+                                                            <a class="department  " href="http://lubinski-899.mirror.zite.co.il/?categoryId=30313" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_e4cf530be0c6ab2a2c8d0e0d25723dad.gif)"></div>
+                                    <div class="titleHolder"><div class="tablecell">מכירת רכב חדש</div></div>
+                              </a>
+                                                            <a class="department pr2-75 " href="http://lubinski-899.mirror.zite.co.il/?categoryId=30315" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_65703090522303b0106ec6c7d9483efc.png)"></div>
+                                    <div class="titleHolder"><div class="tablecell">מימון</div></div>
+                              </a>
+                                                            <a class="department pr2-75 " href="http://lubinski-899.mirror.zite.co.il/?categoryId=30316" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_00eba7133c7f81709bc9cd7b740c9461.gif)"></div>
+                                    <div class="titleHolder"><div class="tablecell">טרייד-אין</div></div>
+                              </a>
+                                                            <a class="department  " href="http://lubinski-899.mirror.zite.co.il/?categoryId=30318" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_a35920b3ae3bb57572aba5685ed36fc7.gif)"></div>
+                                    <div class="titleHolder"><div class="tablecell">טיפולים שוטפים</div></div>
+                              </a>
+                                                            <a class="department pr2-75 " href="http://lubinski-899.mirror.zite.co.il/?categoryId=30319" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_7e6cc5fe40afdddbb7f9c2754052584a.gif)"></div>
+                                    <div class="titleHolder"><div class="tablecell">תיקון תקלות</div></div>
+                              </a>
+                                                            <a class="department pr2-75 " href="http://lubinski-899.mirror.zite.co.il/?categoryId=30321" >
+                                    <div class="iconHolder" style="background-image:url(http://lubinski-899.mirror.zite.co.il/data/images/899_d84e42ccff6e2653082962e7f1ff6f39.png)"></div>
+                                    <div class="titleHolder"><div class="tablecell">רישוי</div></div>
+                              </a>
+                                                      <div class="clr"></div>
+                  </div>
+                  <div class="w44-7 f_left mrl2"><h2>המוביל-פוספלד בע&quot;מ</h2>
+<p>&nbsp;</p>
+<p>המוביל-פוספלד בע&quot;מ הינו מרכז שירות מורשה לרכבים מסוג פיג'ו וסיטרואן, בעל ותק של למעלה מ- 45 שנה. במוסך ציוד חדשני וממוחשב, המאפשר לו להעניק שירות מקצועי ללא פשרות, בהתאם לסטנדרטים הגבוהים ביותר.</p>
+<p>&nbsp;</p>
+<p>כמו כן, המוסך מעסיק צוות עובדים מקצועיים ומיומנים, הערוכים לטפל בכל בעיה במהירות ויעילות. עובדי המוסך עוברים הדרכות והכשרות מטעם היצרן בארץ ובעולם באופן תדיר. לשירות לקוחותינו ממתין יועץ שירות, המלווה כל לקוח במשך הטיפול ברכבו, מקליטת הרכב ועד סיום הטיפול, לשביעות רצונו המלאה.</p>
+<p>&nbsp;</p>
+<h3><strong><span style="color: rgb(255, 0, 0);">המוביל פוספלד שם דגש על מקצועיות, אמינות ואחריות יצרן ויבואן, וכן רואה עצמו מחויב לשמירה על איכות הסביבה .</span></strong></h3>
+<p>&nbsp;</p></div>
+                  <div class="clr"></div>
+            </div>
+      </div>
+      <div class="clr"></div>
+</div>      
+      <div class="upperFooter">
+	    <div class="w1161 center"><p><a href="http://lubinski-899.mirror.zite.co.il/?categoryId=23286">דף הבית</a>&nbsp;&nbsp; &nbsp; &nbsp; <a href="http://lubinski-899.mirror.zite.co.il/?categoryId=23317">אודות </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://lubinski-899.mirror.zite.co.il/?categoryId=23315">שירותים נוספים</a> &nbsp; &nbsp; &nbsp; <a href="http://lubinski-899.mirror.zite.co.il/?categoryId=27457">מחלקות</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="http://lubinski-899.mirror.zite.co.il/?categoryId=29003">אולם תצוגה</a>&nbsp; &nbsp; &nbsp;&nbsp; <a href="http://lubinski-899.mirror.zite.co.il/?contact">צור קשר</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://lubinski-899.mirror.zite.co.il/?categoryId=23428">מבצעים</a></p></div>
+      </div>
+      <div class="lowerFooter">
+	    <div class="w1161">
+		  <div class="f_right">
+			<h1>המוביל פוספלד בע&quot;מ</h1>
+<table width="100%" align="right" cellspacing="0" cellpadding="20" border="0">
+    <tbody>
+        <tr>
+            <td valign="top">
+            <p>מוסך מורשה פיג'ו סיטרואן, פחחות וצבע לרכב לכל סוגי הרכב בהסדר עם חברות הביטוח.</p>
+            <p>סוכנות מכירת רכב חדש פיגו'- סיטרואן</p>
+            <p>&nbsp;</p>
+            </td>
+            <td valign="top">
+            <p>כתובת: המוביל 9 כפר סבא</p>
+            <p>טלפון ראשי: 073-263-6363<br />
+            פקס: 636360 - 0732</p>
+            </td>
+            <td>
+            <p>שעות פעילות</p>
+            <p>יום א'-ה': 07:30-16:30</p>
+            <p>יום שישי: 07:30-12:30</p>
+            <p><!--[if gte mso 9]><xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG />
+            </o:OfficeDocumentSettings>
+            </xml><![endif]--></p>
+            <p><!--[if gte mso 9]><xml>
+            <w:WordDocument>
+            <w:View>Normal</w:View>
+            <w:Zoom>0</w:Zoom>
+            <w:TrackMoves />
+            <w:TrackFormatting />
+            <w:PunctuationKerning />
+            <w:ValidateAgainstSchemas />
+            <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+            <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+            <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+            <w:DoNotPromoteQF />
+            <w:LidThemeOther>EN-US</w:LidThemeOther>
+            <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+            <w:LidThemeComplexScript>HE</w:LidThemeComplexScript>
+            <w:Compatibility>
+            <w:BreakWrappedTables />
+            <w:SnapToGridInCell />
+            <w:WrapTextWithPunct />
+            <w:UseAsianBreakRules />
+            <w:DontGrowAutofit />
+            <w:SplitPgBreakAndParaMark />
+            <w:EnableOpenTypeKerning />
+            <w:DontFlipMirrorIndents />
+            <w:OverrideTableStyleHps />
+            </w:Compatibility>
+            <m:mathPr>
+            <m:mathFont m:val="Cambria Math" />
+            <m:brkBin m:val="before" />
+            <m:brkBinSub m:val="&#45;-" />
+            <m:smallFrac m:val="off" />
+            <m:dispDef />
+            <m:lMargin m:val="0" />
+            <m:rMargin m:val="0" />
+            <m:defJc m:val="centerGroup" />
+            <m:wrapIndent m:val="1440" />
+            <m:intLim m:val="subSup" />
+            <m:naryLim m:val="undOvr" />
+            </m:mathPr></w:WordDocument>
+            </xml><![endif]--><!--[if gte mso 9]><xml>
+            <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+            DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+            LatentStyleCount="371">
+            <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal" />
+            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1" />
+            <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+            UnhideWhenUsed="true" QFormat="true" Name="heading 2" />
+            <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+            UnhideWhenUsed="true" QFormat="true" Name="heading 3" />
+            <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+            UnhideWhenUsed="true" QFormat="true" Name="heading 4" />
+            <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+            UnhideWhenUsed="true" QFormat="true" Name="heading 5" />
+            <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+            UnhideWhenUsed="true" QFormat="true" Name="heading 6" />
+            <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+            UnhideWhenUsed="true" QFormat="true" Name="heading 7" />
+            <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+            UnhideWhenUsed="true" QFormat="true" Name="heading 8" />
+            <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+            UnhideWhenUsed="true" QFormat="true" Name="heading 9" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="index 1" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="index 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="index 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="index 4" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="index 5" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="index 6" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="index 7" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="index 8" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="index 9" />
+            <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+            UnhideWhenUsed="true" Name="toc 1" />
+            <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+            UnhideWhenUsed="true" Name="toc 2" />
+            <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+            UnhideWhenUsed="true" Name="toc 3" />
+            <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+            UnhideWhenUsed="true" Name="toc 4" />
+            <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+            UnhideWhenUsed="true" Name="toc 5" />
+            <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+            UnhideWhenUsed="true" Name="toc 6" />
+            <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+            UnhideWhenUsed="true" Name="toc 7" />
+            <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+            UnhideWhenUsed="true" Name="toc 8" />
+            <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+            UnhideWhenUsed="true" Name="toc 9" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Normal Indent" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="footnote text" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="annotation text" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="header" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="footer" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="index heading" />
+            <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+            UnhideWhenUsed="true" QFormat="true" Name="caption" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="table of figures" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="envelope address" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="envelope return" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="footnote reference" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="annotation reference" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="line number" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="page number" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="endnote reference" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="endnote text" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="table of authorities" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="macro" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="toa heading" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Bullet" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Number" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List 4" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List 5" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Bullet 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Bullet 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Bullet 4" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Bullet 5" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Number 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Number 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Number 4" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Number 5" />
+            <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Closing" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Signature" />
+            <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+            UnhideWhenUsed="true" Name="Default Paragraph Font" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Body Text" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Body Text Indent" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Continue" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Continue 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Continue 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Continue 4" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="List Continue 5" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Message Header" />
+            <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Salutation" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Date" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Body Text First Indent" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Body Text First Indent 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Note Heading" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Body Text 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Body Text 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Body Text Indent 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Body Text Indent 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Block Text" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Hyperlink" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="FollowedHyperlink" />
+            <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong" />
+            <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Document Map" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Plain Text" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="E-mail Signature" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Top of Form" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Bottom of Form" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Normal (Web)" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Acronym" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Address" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Cite" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Code" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Definition" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Keyboard" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Preformatted" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Sample" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Typewriter" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="HTML Variable" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Normal Table" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="annotation subject" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="No List" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Outline List 1" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Outline List 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Outline List 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Simple 1" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Simple 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Simple 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Classic 1" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Classic 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Classic 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Classic 4" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Colorful 1" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Colorful 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Colorful 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Columns 1" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Columns 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Columns 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Columns 4" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Columns 5" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Grid 1" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Grid 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Grid 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Grid 4" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Grid 5" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Grid 6" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Grid 7" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Grid 8" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table List 1" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table List 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table List 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table List 4" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table List 5" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table List 6" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table List 7" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table List 8" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table 3D effects 1" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table 3D effects 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table 3D effects 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Contemporary" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Elegant" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Professional" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Subtle 1" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Subtle 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Web 1" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Web 2" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Web 3" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Balloon Text" />
+            <w:LsdException Locked="false" Priority="39" Name="Table Grid" />
+            <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+            Name="Table Theme" />
+            <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text" />
+            <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing" />
+            <w:LsdException Locked="false" Priority="60" Name="Light Shading" />
+            <w:LsdException Locked="false" Priority="61" Name="Light List" />
+            <w:LsdException Locked="false" Priority="62" Name="Light Grid" />
+            <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1" />
+            <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2" />
+            <w:LsdException Locked="false" Priority="65" Name="Medium List 1" />
+            <w:LsdException Locked="false" Priority="66" Name="Medium List 2" />
+            <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1" />
+            <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2" />
+            <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3" />
+            <w:LsdException Locked="false" Priority="70" Name="Dark List" />
+            <w:LsdException Locked="false" Priority="71" Name="Colorful Shading" />
+            <w:LsdException Locked="false" Priority="72" Name="Colorful List" />
+            <w:LsdException Locked="false" Priority="73" Name="Colorful Grid" />
+            <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1" />
+            <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1" />
+            <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1" />
+            <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1" />
+            <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1" />
+            <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1" />
+            <w:LsdException Locked="false" SemiHidden="true" Name="Revision" />
+            <w:LsdException Locked="false" Priority="34" QFormat="true"
+            Name="List Paragraph" />
+            <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote" />
+            <w:LsdException Locked="false" Priority="30" QFormat="true"
+            Name="Intense Quote" />
+            <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1" />
+            <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1" />
+            <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1" />
+            <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1" />
+            <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1" />
+            <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1" />
+            <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1" />
+            <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1" />
+            <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2" />
+            <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2" />
+            <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2" />
+            <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2" />
+            <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2" />
+            <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2" />
+            <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2" />
+            <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2" />
+            <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2" />
+            <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2" />
+            <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2" />
+            <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2" />
+            <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2" />
+            <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2" />
+            <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3" />
+            <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3" />
+            <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3" />
+            <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3" />
+            <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3" />
+            <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3" />
+            <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3" />
+            <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3" />
+            <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3" />
+            <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3" />
+            <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3" />
+            <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3" />
+            <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3" />
+            <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3" />
+            <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4" />
+            <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4" />
+            <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4" />
+            <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4" />
+            <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4" />
+            <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4" />
+            <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4" />
+            <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4" />
+            <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4" />
+            <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4" />
+            <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4" />
+            <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4" />
+            <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4" />
+            <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4" />
+            <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5" />
+            <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5" />
+            <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5" />
+            <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5" />
+            <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5" />
+            <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5" />
+            <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5" />
+            <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5" />
+            <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5" />
+            <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5" />
+            <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5" />
+            <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5" />
+            <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5" />
+            <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5" />
+            <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6" />
+            <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6" />
+            <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6" />
+            <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6" />
+            <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6" />
+            <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6" />
+            <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6" />
+            <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6" />
+            <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6" />
+            <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6" />
+            <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6" />
+            <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6" />
+            <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6" />
+            <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6" />
+            <w:LsdException Locked="false" Priority="19" QFormat="true"
+            Name="Subtle Emphasis" />
+            <w:LsdException Locked="false" Priority="21" QFormat="true"
+            Name="Intense Emphasis" />
+            <w:LsdException Locked="false" Priority="31" QFormat="true"
+            Name="Subtle Reference" />
+            <w:LsdException Locked="false" Priority="32" QFormat="true"
+            Name="Intense Reference" />
+            <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title" />
+            <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+            UnhideWhenUsed="true" Name="Bibliography" />
+            <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+            UnhideWhenUsed="true" QFormat="true" Name="TOC Heading" />
+            <w:LsdException Locked="false" Priority="41" Name="Plain Table 1" />
+            <w:LsdException Locked="false" Priority="42" Name="Plain Table 2" />
+            <w:LsdException Locked="false" Priority="43" Name="Plain Table 3" />
+            <w:LsdException Locked="false" Priority="44" Name="Plain Table 4" />
+            <w:LsdException Locked="false" Priority="45" Name="Plain Table 5" />
+            <w:LsdException Locked="false" Priority="40" Name="Grid Table Light" />
+            <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light" />
+            <w:LsdException Locked="false" Priority="47" Name="Grid Table 2" />
+            <w:LsdException Locked="false" Priority="48" Name="Grid Table 3" />
+            <w:LsdException Locked="false" Priority="49" Name="Grid Table 4" />
+            <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark" />
+            <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful" />
+            <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="Grid Table 1 Light Accent 1" />
+            <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1" />
+            <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1" />
+            <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1" />
+            <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="Grid Table 6 Colorful Accent 1" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="Grid Table 7 Colorful Accent 1" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="Grid Table 1 Light Accent 2" />
+            <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2" />
+            <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2" />
+            <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2" />
+            <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="Grid Table 6 Colorful Accent 2" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="Grid Table 7 Colorful Accent 2" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="Grid Table 1 Light Accent 3" />
+            <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3" />
+            <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3" />
+            <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3" />
+            <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="Grid Table 6 Colorful Accent 3" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="Grid Table 7 Colorful Accent 3" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="Grid Table 1 Light Accent 4" />
+            <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4" />
+            <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4" />
+            <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4" />
+            <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="Grid Table 6 Colorful Accent 4" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="Grid Table 7 Colorful Accent 4" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="Grid Table 1 Light Accent 5" />
+            <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5" />
+            <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5" />
+            <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5" />
+            <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="Grid Table 6 Colorful Accent 5" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="Grid Table 7 Colorful Accent 5" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="Grid Table 1 Light Accent 6" />
+            <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6" />
+            <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6" />
+            <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6" />
+            <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="Grid Table 6 Colorful Accent 6" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="Grid Table 7 Colorful Accent 6" />
+            <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light" />
+            <w:LsdException Locked="false" Priority="47" Name="List Table 2" />
+            <w:LsdException Locked="false" Priority="48" Name="List Table 3" />
+            <w:LsdException Locked="false" Priority="49" Name="List Table 4" />
+            <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark" />
+            <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful" />
+            <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="List Table 1 Light Accent 1" />
+            <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1" />
+            <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1" />
+            <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1" />
+            <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="List Table 6 Colorful Accent 1" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="List Table 7 Colorful Accent 1" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="List Table 1 Light Accent 2" />
+            <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2" />
+            <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2" />
+            <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2" />
+            <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="List Table 6 Colorful Accent 2" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="List Table 7 Colorful Accent 2" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="List Table 1 Light Accent 3" />
+            <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3" />
+            <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3" />
+            <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3" />
+            <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="List Table 6 Colorful Accent 3" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="List Table 7 Colorful Accent 3" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="List Table 1 Light Accent 4" />
+            <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4" />
+            <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4" />
+            <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4" />
+            <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="List Table 6 Colorful Accent 4" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="List Table 7 Colorful Accent 4" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="List Table 1 Light Accent 5" />
+            <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5" />
+            <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5" />
+            <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5" />
+            <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="List Table 6 Colorful Accent 5" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="List Table 7 Colorful Accent 5" />
+            <w:LsdException Locked="false" Priority="46"
+            Name="List Table 1 Light Accent 6" />
+            <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6" />
+            <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6" />
+            <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6" />
+            <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6" />
+            <w:LsdException Locked="false" Priority="51"
+            Name="List Table 6 Colorful Accent 6" />
+            <w:LsdException Locked="false" Priority="52"
+            Name="List Table 7 Colorful Accent 6" />
+            </w:LatentStyles>
+            </xml><![endif]--><!--[if gte mso 10]>
+            <style>
+            /* Style Definitions */
+            table.MsoNormalTable
+            {mso-style-name:"טבלה רגילה";
+            mso-tstyle-rowband-size:0;
+            mso-tstyle-colband-size:0;
+            mso-style-noshow:yes;
+            mso-style-priority:99;
+            mso-style-parent:"";
+            mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+            mso-para-margin-top:0cm;
+            mso-para-margin-right:0cm;
+            mso-para-margin-bottom:8.0pt;
+            mso-para-margin-left:0cm;
+            line-height:107%;
+            mso-pagination:widow-orphan;
+            font-size:11.0pt;
+            font-family:"Calibri","sans-serif";
+            mso-ascii-font-family:Calibri;
+            mso-ascii-theme-font:minor-latin;
+            mso-hansi-font-family:Calibri;
+            mso-hansi-theme-font:minor-latin;}
+            </style>
+            <![endif]--></p>
+            <p style="text-indent:-18.0pt;mso-list:l0 level1 lfo1" dir="RTL" class="MsoListParagraph"><span style="mso-fareast-font-family:Calibri;mso-bidi-font-family:Calibri"><span style="mso-list:Ignore"><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang="HE" style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">אולם תצוגה: </span></p>
+            <p>יום א'-ה': 09:00-17:30</p>
+            <p>יום שישי: 09:00-12:30</p>
+            <p style="text-indent:-18.0pt;mso-list:l0 level1 lfo1" dir="RTL" class="MsoListParagraph"><span lang="HE" style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+            </span></p>
+            <p>&nbsp;</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p><div class="clr"></div>
+		  </div>
+		  <div class="f_left"><a href="http://lubinski-899.mirror.zite.co.il"><img width="107" height="107" alt="stamp" src="http://www.mirror.zite.co.il/uploaded/images/899_7e6027dc5e1b9c0c77af861cc2b7d72c.png" /></a></div>
+		  <div class="clr"></div>
+	    </div>
+	    <div class="clr"></div>
+      </div>
+</body>	
+</html>
